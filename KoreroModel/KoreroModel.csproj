@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="dbo\**" />
+    <Compile Remove="PublishScript\**" />
+    <EmbeddedResource Remove="dbo\**" />
+    <EmbeddedResource Remove="PublishScript\**" />
+    <None Remove="dbo\**" />
+    <None Remove="PublishScript\**" />
+  </ItemGroup>
+
+</Project>
