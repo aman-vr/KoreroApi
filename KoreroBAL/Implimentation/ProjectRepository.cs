@@ -1,4 +1,5 @@
-﻿using KoreroBAL.Interface;
+﻿using System;
+using KoreroBAL.Interface;
 using KoreroDAL.ConnectionString;
 using KoreroDAL.Interface;
 using KoreroModel.Models.Input;
@@ -21,7 +22,9 @@ namespace KoreroBAL.Implimentation
 
         public int CreateNewProject(ProjectListModel project)
         {
-            string sQuery = "INSERT INTO dbo.ProjectList VALUES (@ProjectName); ";
+            project.CreatedAt = DateTime.Now;
+            project.ModifiedAt = DateTime.Now;
+            string sQuery = "INSERT INTO dbo.ProjectList VALUES (@ProjectName, @CreatedAt, @ModifiedAt); ";
             return _data.SaveData(sQuery, project, _connection.ConnectionStringName);
         }
 
@@ -35,11 +38,17 @@ namespace KoreroBAL.Implimentation
         public List<ProjectListModel> GetProjects()
         {
             string sQuery = "SELECT * FROM dbo.ProjectList";
-            return _data.LoadData<ProjectListModel, dynamic>(sQuery, new { }, _connection.ConnectionStringName);
+            var rows = _data.LoadData<ProjectListModel, dynamic>(sQuery, new { }, _connection.ConnectionStringName);
+            if (rows.Count == 0)
+            {
+                throw new Exception("No projects");
+            }
+            return rows;
         }
 
         public int UpdateProject(string projectName, int Id)
         {
+            // project.CreatedAt = DateTime.UtcNow;
             string sQuery = "UPDATE dbo.ProjectList SET ProjectName = @ProjectName WHERE Id = @Id ";
             return _data.SaveData(sQuery, new { Id = Id, ProjectName = projectName }, _connection.ConnectionStringName);
         }

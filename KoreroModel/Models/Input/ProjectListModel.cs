@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using KoreroModel.Models.common;
 
 namespace KoreroModel.Models.Input
 {
-   public class ProjectListModel
+    public class ProjectListModel : Entity
     {
         public int Id { get; set; }
         public string ProjectName { get; set; }
