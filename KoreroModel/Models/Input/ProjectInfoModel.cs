@@ -4,7 +4,7 @@ using System.Text;
 
 namespace KoreroModel.Models.Input
 {
-    public class ProjectModel
+    public class ProjectInfoModel
     {
         public int Id { get; set; }
         public string ProjectName { get; set; }
@@ -12,5 +12,6 @@ namespace KoreroModel.Models.Input
         public string LiveUrl { get; set; }
         public string GitUrl { get; set; }
         public string TechUsed { get; set; }
+        public int ProjectListId { get; set; }
     }
 }

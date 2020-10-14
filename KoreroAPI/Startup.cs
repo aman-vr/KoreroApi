@@ -29,7 +29,7 @@ namespace KoreroAPI
                 ConnectionStringName = "Local"
             });
             services.AddSingleton<IDataAccess, DataAccess>();
-            services.AddSingleton<IProject, Project>();
+            services.AddSingleton<IProjectRepository, ProjectRepository>();
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>

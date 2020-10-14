@@ -1,16 +1,14 @@
 ﻿using Dapper;
 using KoreroDAL.Interface;
 using Microsoft.Extensions.Configuration;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
 
 namespace KoreroDAL.Implimentation
 {
-   public class DataAccess : IDataAccess
+    public class DataAccess : IDataAccess
     {
         private readonly IConfiguration _config;
 
@@ -37,3 +35,6 @@ namespace KoreroDAL.Implimentation
 
     }
 }
+
+// Devops
+// Automatic deployment----> CI--CD

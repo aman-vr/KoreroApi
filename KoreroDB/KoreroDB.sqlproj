@@ -62,7 +62,14 @@
     <Folder Include="dbo\StoreProcedures" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\Project.sql" />
+    <Build Include="dbo\Tables\ProjectInfo.sql" />
     <Build Include="dbo\Tables\ProjectImage.sql" />
+    <Build Include="dbo\Tables\ProjectList.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="KoreroDB.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PublishScripts\KoreroDB.publish.xml" />
   </ItemGroup>
 </Project>
