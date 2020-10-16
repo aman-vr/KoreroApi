@@ -39,7 +39,7 @@ namespace KoreroAPI.Controllers
             return Ok(_project.CreateNewProject(project));
         }
         [HttpPost]
-        [Route("UpdateProject/{Id}")]
+        [Route("UpdateProject")]
         public IActionResult UpdateProject(string projectName, int Id)
         {
             return Ok(_project.UpdateProject(projectName, Id));
@@ -50,6 +50,6 @@ namespace KoreroAPI.Controllers
         {
             return Ok(_project.DeleteProject(Id));
         }
-     
+
     }
 }
