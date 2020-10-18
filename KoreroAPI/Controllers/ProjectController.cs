@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using KoreroBAL.Interface;
 using KoreroModel.Models.Input;
+using KoreroModel.Models.Output;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KoreroAPI.Controllers
@@ -39,10 +40,22 @@ namespace KoreroAPI.Controllers
             return Ok(_project.CreateNewProject(project));
         }
         [HttpPost]
+        [Route("CreateProjectInfo")]
+        public IActionResult CreateProjectInfo(ProjectInfoModel project)
+        {
+            return Ok(_project.InsertProjectInfo(project));
+        }
+        [HttpPost]
         [Route("UpdateProject")]
         public IActionResult UpdateProject(string projectName, int Id)
         {
             return Ok(_project.UpdateProject(projectName, Id));
+        }
+        [HttpPost]
+        [Route("UpdateProjectInfo")]
+        public IActionResult UpdateProjectInfo(ProjectInfoUpdate projectInfoModel)
+        {
+            return Ok(_project.UpdateProjectInfo(projectInfoModel));
         }
         [HttpPost]
         [Route("DeleteProject/{Id}")]

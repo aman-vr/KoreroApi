@@ -9,7 +9,9 @@ namespace KoreroBAL.Interface
         List<ProjectListModel> GetProjects();
         ProjectInfoDTO GetProjectInfo(int Id);
         int CreateNewProject(ProjectListModel project);
+        int InsertProjectInfo(ProjectInfoModel projectInfo);
         int DeleteProject(int Id);
         int UpdateProject(string projectName, int Id);
+        int UpdateProjectInfo(ProjectInfoUpdate projectInfoModel);
     }
 }
